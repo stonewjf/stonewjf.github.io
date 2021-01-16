@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo使用, 偶尔写点东西">
+    <meta name="keywords" content="POJ2240, 偶尔写点东西">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hexo使用 | 偶尔写点东西</title>
+    <title>POJ2240 | 偶尔写点东西</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -258,12 +258,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hexo使用</h1>
+                    <h1 class="description center-align post-title">POJ2240</h1>
                 </div>
             </div>
         </div>
@@ -377,9 +377,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Floyd/">
+                                <span class="chip bg-color">Floyd</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -387,8 +391,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/hexo/" class="post-category">
-                                hexo
+                            <a href="/categories/ACM/" class="post-category">
+                                ACM
                             </a>
                         
                     </div>
@@ -400,7 +404,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-01-13
+                    2021-01-16
                 </div>
                 
 
@@ -424,27 +428,56 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p><strong>第一步 发表一篇文章</strong></p>
-<p>发表一篇文章，标题为<code>title</code>，</p>
-<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token blockquote punctuation">></span> hexo new "title"</code></pre>
-<p>即在hexo根目录下的<code>/source/_posts/</code>生成<code>title.md</code>。用<code>Markdown</code>打开，配置开头:</p>
-<pre class="language-markdown" data-language="markdown"><code class="language-markdown">title: title 				# 支持中文
-date: 2013-05-29 07:56:29 		# 发表日期，一般不改动
-categories: blog 			# 文章文类
-tags: TAG 				# 文章标签，多于一项时采用如下这种格式- TAG1- TAG2---</code></pre>
+                <p>题意：其能不能通过各个国家汇率的不同赚到比当初更多的钱。</p>
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cstring></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cmath></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;queue></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sstream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;map></span></span>
 
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> maxn <span class="token operator">=</span> <span class="token number">33</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">,</span>tot <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+map<span class="token operator">&lt;</span>string<span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span> s<span class="token punctuation">;</span>
+<span class="token keyword">double</span> path<span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">[</span>maxn<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">floyd</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
 
-<p><strong>第二步 预览和修改</strong></p>
-<p>　　使用命令<code>hexo s[erver]</code>启动服务器，其中[..]为可选输入，git解析命令时会自动补全。使用浏览器访问<strong>localhost:4000</strong>预览效果，退出server则使用Ctrl+c。<br>　　按照第三步进行修改，保存后通过浏览器刷新即可预览修改。有时因为Cache的缘故，刷新后没有更新修改。使用命令<code>hexo clean</code>清楚缓存，然后通过<code>hexo g[enerate]</code>重新生成网站，再启动服务器，刷新预览。<br>　　最终修改确定后，即可进入下一步。</p>
-<p><strong>第三步 同步到github</strong></p>
-<p>　　使用命令<code>hexo d[eploy]</code>将你的博客发布到github上了，当然需要根据提示输入你的Github用户名和密码。<br>　　如果部署失败，尝试上述第一步中<strong>_config.yml</strong>配置文件中deploy的type改成git，然后运行下 命令<code>npm install hexo-deployer-git --save</code>，再hexo g，hexo d。</p>
-<h1 id="新建文章的时候，如何添加文章的默认值"><a href="#新建文章的时候，如何添加文章的默认值" class="headerlink" title="新建文章的时候，如何添加文章的默认值"></a>新建文章的时候，如何添加文章的默认值</h1><p>hexo的根目录下的scaffolds目录下，是新建页面的模板，执行新建命令时，是根据这里的模板页来完成的，所以可以在这里根据你自己的需求添加一些默认值。</p>
-<p>比如你想对文章添加默认值，那么打开post.md进去添加即可，如果是对页面进行添加，那么进入page.md修改即可。</p>
-<pre class="language-markdown" data-language="markdown"><code class="language-markdown">title: &#123;&#123; title &#125;&#125;
-date: &#123;&#123; date &#125;&#125;
-tags:
-categories:</code></pre>
-
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> k <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                path<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>path<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>path<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">*</span>path<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>path<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span><span class="token number">1.0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    string str<span class="token punctuation">,</span>s1<span class="token punctuation">,</span>s2<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> c<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>cin<span class="token operator">>></span>n<span class="token operator">&amp;&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        s<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">memset</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span> path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> path<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cin<span class="token operator">>></span>str<span class="token punctuation">;</span>
+            s<span class="token punctuation">[</span>str<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        cin<span class="token operator">>></span>m<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>m<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            cin<span class="token operator">>></span>s1<span class="token operator">>></span>c<span class="token operator">>></span>s2<span class="token punctuation">;</span>
+            path<span class="token punctuation">[</span>s<span class="token punctuation">[</span>s1<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>s<span class="token punctuation">[</span>s2<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> c<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">floyd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> cout<span class="token operator">&lt;&lt;</span><span class="token string">"Case "</span><span class="token operator">&lt;&lt;</span><span class="token operator">++</span>tot<span class="token operator">&lt;&lt;</span><span class="token string">": Yes"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+        <span class="token keyword">else</span> cout<span class="token operator">&lt;&lt;</span><span class="token string">"Case "</span><span class="token operator">&lt;&lt;</span><span class="token operator">++</span>tot<span class="token operator">&lt;&lt;</span><span class="token string">": No"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+</code></pre>
                 
             </div>
             <hr/>
@@ -470,7 +503,7 @@ categories:</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/01/13/hexo%E4%BD%BF%E7%94%A8/">http://example.com/2021/01/13/hexo%E4%BD%BF%E7%94%A8/</a>
+                    <a href="http://example.com/2021/01/16/POJ2240/">http://example.com/2021/01/16/POJ2240/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -507,7 +540,11 @@ categories:</code></pre>
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Floyd/">
+                                    <span class="chip bg-color">Floyd</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -674,17 +711,18 @@ categories:</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/01/13/hexo%E4%B8%BB%E9%A2%98%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/">
+                <a href="/2021/01/16/POJ2240/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="hexo主题相关设置">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="POJ2240">
                         
-                        <span class="card-title">hexo主题相关设置</span>
+                        <span class="card-title">POJ2240</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -694,16 +732,29 @@ categories:</code></pre>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-16
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            stonewjf
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ACM/" class="post-category">
+                                    ACM
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Floyd/">
+                        <span class="chip bg-color">Floyd</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -715,13 +766,13 @@ categories:</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F/">
+                <a href="/2021/01/15/POJ1502/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="数据库系统">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="POJ1502">
                         
-                        <span class="card-title">数据库系统</span>
+                        <span class="card-title">POJ1502</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -732,19 +783,27 @@ categories:</code></pre>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE/" class="post-category">
-                                    专业课
+                            <a href="/categories/ACM/" class="post-category">
+                                    ACM
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">
+                        <span class="chip bg-color">最短路</span>
+                    </a>
+                    
                 </div>
                 
             </div>

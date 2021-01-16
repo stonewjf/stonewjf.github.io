@@ -39,6 +39,7 @@
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
+       //background: rgba(0,0,0,1);
     }
 </style>
 
@@ -260,7 +261,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    subtitle
+                    
                 
             </div>
 
@@ -275,9 +276,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/6.jpg)');
 </script>
 
 
@@ -314,6 +313,15 @@
                     </span>
                 </a>
                 
+                
+                <a href="/tags/Floyd/" title="Floyd: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Floyd" style="background-color: #D5F5E3;">Floyd
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
@@ -338,7 +346,7 @@
 <script type="text/javascript">
     
 
-    $('#tag-wordcloud').jQCloud([{"text":"最短路","weight":5,"link":"/tags/最短路/"},{"text":"spfa","weight":1,"link":"/tags/spfa/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"最短路","weight":5,"link":"/tags/最短路/"},{"text":"spfa","weight":1,"link":"/tags/spfa/"},{"text":"Floyd","weight":1,"link":"/tags/Floyd/"}], {
         autoResize: true
     });
 </script>

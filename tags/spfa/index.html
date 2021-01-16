@@ -39,6 +39,7 @@
        background-repeat:no-repeat;
        background-size:cover;
        background-attachment:fixed;
+       //background: rgba(0,0,0,1);
     }
 </style>
 
@@ -260,7 +261,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    subtitle
+                    
                 
             </div>
 
@@ -275,9 +276,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/6.jpg)');
 </script>
 
 
@@ -310,6 +309,15 @@
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
                             data-tagname="spfa" style="background-color: #F5EEF8;">spfa
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Floyd/" title="Floyd: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Floyd" style="background-color: #D5F5E3;">Floyd
                         <span class="tag-length">1</span>
                     </span>
                 </a>
