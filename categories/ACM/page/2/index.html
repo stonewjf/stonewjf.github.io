@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类: hexo, 偶尔写点东西">
+    <meta name="keywords" content="分类: ACM, 偶尔写点东西">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分类: hexo | 偶尔写点东西</title>
+    <title>分类: ACM | 偶尔写点东西</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -299,7 +299,7 @@
                 
                 <a href="/categories/ACM/" title="ACM: 14">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
+                             chip-active "
                             style="background-color: #F9EBEA;">ACM
                         <span class="tag-length">14</span>
                     </span>
@@ -308,7 +308,7 @@
                 
                 <a href="/categories/hexo/" title="hexo: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
+                             chip-default "
                             style="background-color: #F5EEF8;">hexo
                         <span class="tag-length">1</span>
                     </span>
@@ -337,23 +337,70 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/01/13/hexo%E4%BD%BF%E7%94%A8/">
+                    <a href="/2021/01/15/POJ3268/">
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="hexo使用">
+                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="POJ3268">
                             
-                            <span class="card-title">hexo使用</span>
+                            <span class="card-title">POJ3268</span>
                         </div>
                     </a>
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                使用第一步 发表一篇文章
-发表一篇文章，标题为title，
-> hexo new "title"
-即在hexo根目录下的/source/_posts/生成title.md。用Markdown打开，配置开头:
-title: title 			
+                                有编号为1－N的牛，它们之间存在一些单向的路径。给定一头牛的编号，其他牛要去拜访它并且拜访完之后要返回自己原来的位置，求这些牛中所花的最长的来回时间是多少。
+从x跑一边dij，再把方向反过来再从x跑一遍最短路
+#include &lt;io
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/ACM/" class="post-category">
+                                    ACM
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">
+                            <span class="chip bg-color">最短路</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/01/13/POJ2253/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="POJ2253">
+                            
+                            <span class="card-title">POJ2253</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                给出一个无向图,求一条1~2的路径使得路径上的最大边权最小。
+代码仿照朴素的迪杰斯特拉算法来写，改写边权更新操作
+if(!vis[j]&amp;&amp;dis[j] > max(dis[p] , path[p][j]))
+    dis[
                             
                         </div>
                         <div class="publish-info">
@@ -364,8 +411,8 @@ title: title
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/hexo/" class="post-category">
-                                    hexo
+                                <a href="/categories/ACM/" class="post-category">
+                                    ACM
                                 </a>
                                 
                                 
@@ -374,12 +421,144 @@ title: title
                     </div>
 
                     
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">
+                            <span class="chip bg-color">最短路</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/01/13/POJ2387/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="POJ2387">
+                            
+                            <span class="card-title">POJ2387</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                #include &lt;iostream>
+#include &lt;cstring>
+
+using namespace std;
+
+const int maxn = 1e3+10;
+const int INF = 0x3f3f3f3f;
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-13
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/ACM/" class="post-category">
+                                    ACM
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">
+                            <span class="chip bg-color">最短路</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/01/13/POJ1797/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="POJ1797">
+                            
+                            <span class="card-title">POJ1797</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                题意是要求1到N点的一条路径，由于每一段路都是双向的并且有承受能力，求一条路最小承受能力最大，其实就是之前POJ2253的翻版，一个求最大值最小，一个求最小值最大。
+#include &lt;iostream>
+#include &lt;c
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-13
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/ACM/" class="post-category">
+                                    ACM
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">
+                            <span class="chip bg-color">最短路</span>
+                        </a>
+                        
+                    </div>
+                    
                 </div>
             </div>
             
         </div>
     </article>
 </main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a href="/categories/ACM/"
+               class="left btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">2 / 2</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a class="right btn-floating btn-large disabled">
+                <i class="fas fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
 
 
 
